@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
+  output: 'export',
+  basePath: isProd ? '/PORTFOLIO' : '',
+  assetPrefix: isProd ? '/PORTFOLIO/' : '',
+  trailingSlash: true,
   reactStrictMode: true,
+  transpilePackages: ['lucide-react'],
   images: {
     unoptimized: true,
   },
