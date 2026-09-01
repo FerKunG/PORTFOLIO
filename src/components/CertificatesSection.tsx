@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { CertificateItem } from '../data/portfolioData';
+import { getAssetPath } from '../utils/pathHelper';
 import { Award, Sparkles, ExternalLink, X, ZoomIn, CheckCircle2, AlertCircle, Plus, ShieldCheck, Tag, Star } from 'lucide-react';
 
 interface CertificatesSectionProps {
@@ -120,7 +121,7 @@ export default function CertificatesSection({ certificates, onOpenAiAnalyzer }: 
                   {/* Certificate Thumbnail with Hover Zoom */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-black/60 border-b border-white/10">
                     <Image
-                      src={cert.image}
+                      src={getAssetPath(cert.image)}
                       alt={cert.title}
                       fill
                       className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
@@ -222,7 +223,7 @@ export default function CertificatesSection({ certificates, onOpenAiAnalyzer }: 
               <div className="lg:col-span-6 space-y-3">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/15 bg-black/90 shadow-xl">
                   <Image
-                    src={selectedCert.image}
+                    src={getAssetPath(selectedCert.image)}
                     alt={selectedCert.title}
                     fill
                     className="object-contain p-2"

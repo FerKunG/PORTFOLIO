@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { getAssetPath } from '../utils/pathHelper';
 import { ArrowRight, Sparkles, Download, Mail, CheckCircle2, Award, BookOpen, Code2, Cpu, ExternalLink } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -137,7 +138,7 @@ export default function HeroSection({ onOpenAiAnalyzer }: HeroSectionProps) {
                   <div className="absolute inset-0 bg-crimson-radial opacity-60 pointer-events-none" />
                   
                   <Image
-                    src="/images/profile.png"
+                    src={getAssetPath('/images/profile.png')}
                     alt="นายณัฐพงษ์ ดวงรัตน์ (แสตมป์)"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500 relative z-10"

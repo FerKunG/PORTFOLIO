@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { PROJECTS_DATA, ProjectItem } from '../data/portfolioData';
+import { getAssetPath } from '../utils/pathHelper';
 import { FolderGit2, ExternalLink, Github, Sparkles, CheckCircle2, X, Layers, Cpu, Code2, ArrowRight } from 'lucide-react';
 
 export default function ProjectsSection() {
@@ -135,7 +136,7 @@ export default function ProjectsSection() {
                   className="relative aspect-video rounded-2xl overflow-hidden border border-crimson-500/30 shadow-2xl cursor-pointer group bg-black/80"
                 >
                   <Image
-                    src="/images/lnwmath_preview.jpg"
+                    src={getAssetPath('/images/lnwmath_preview.jpg')}
                     alt="LNWMATH AI Platform UI"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -168,7 +169,7 @@ export default function ProjectsSection() {
                     className="relative aspect-video overflow-hidden cursor-pointer bg-black/50"
                   >
                     <Image
-                      src={project.imageUrl}
+                      src={getAssetPath(project.imageUrl)}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -249,7 +250,7 @@ export default function ProjectsSection() {
             {/* Modal Image */}
             <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg">
               <Image
-                src={selectedProject.imageUrl}
+                src={getAssetPath(selectedProject.imageUrl)}
                 alt={selectedProject.title}
                 fill
                 className="object-cover"

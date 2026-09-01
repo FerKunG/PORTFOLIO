@@ -5,6 +5,7 @@ import Image from 'next/image';
 import confetti from 'canvas-confetti';
 import { CertificateItem } from '../data/portfolioData';
 import { PRESET_CERTIFICATES, analyzeCertificateImage, generateDescriptions, AnalysisResult } from '../utils/aiAnalyzer';
+import { getAssetPath } from '../utils/pathHelper';
 import {
   Sparkles,
   UploadCloud,
@@ -291,7 +292,7 @@ export default function AiCertificateAnalyzer({
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/15 bg-black/90 shadow-2xl">
                   {previewUrl ? (
                     <Image
-                      src={previewUrl}
+                      src={getAssetPath(previewUrl)}
                       alt="Analyzed Certificate"
                       fill
                       className="object-contain p-2"
